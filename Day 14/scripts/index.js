@@ -4,10 +4,15 @@
 //variables inside function's top, if and else are in block level scope. All of them 
 //refers to different variables 
 
-let str = 2;
-console.log(str);
 
-function reverseValue(value) {
+//you cannot delcare same variable twice in the same scope
+
+
+//let str = 2;
+//let str = 2; you cannot decalre the same variable multiple times in same scope
+//console.log(str);
+
+/* function reverseValue(value) {
     let str = 3;
     console.log(str);
     if(typeof value === 'number' ){
@@ -31,5 +36,16 @@ function reverseValue(value) {
 
 
 reverseValue('madam');
+ */
 
+
+
+//but if let variable is below the and the variable 
+//is called at first then it will cause4 issu;
+
+console.log(b);
+
+
+var b = 10;
+var a = 20;
 
