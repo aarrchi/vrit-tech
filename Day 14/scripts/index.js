@@ -1,53 +1,21 @@
+//Global Scope and Block scope
 
+//outermost variable is in global scope
+//variables inside function's top, if and else are in block level scope. All of them 
+//refers to different variables 
 
-//******************************************************************* */
-//Functions >> goal 
-//-> specific set of task > specific solution
-//-> removes code repeatation
-
-
-//es5/es6 -> specification
-
-//undefined means variable is declared but value is not assigned
-//null means could not find
-
-
-//function declare
-function reverseString(num1, num2){ //parameter value passed from down
-    console.log(num1, num2);
-}
-
-
-//function call
-reverseString(10, 20); //pass value here(dynamic data)
-
-
-
-/* function reverse(str) {
-    let length = str.length;
-    let reverseString = '';
-    for (i = length-1; i >= 0; i--){
-        reverseString = reverseString + str[i];
-    }
-
-    console.log(reverseString);
-    (reverseString === str ? console.log(str, 'is a palindrome'): console.log(str, 'is not a palindrome'))
-}
-
-reverse('madam');
-reverse('abcba');
-reverse('pasang'); */
-
-
-
-//for palidrome numbers
+let str = 2;
+console.log(str);
 
 function reverseValue(value) {
-    let str;
+    let str = 3;
+    console.log(str);
     if(typeof value === 'number' ){
-        str = value.toString();
+       let str = value.toString();
+       console.log(str);
     }else{
-        str = value;
+       let str = value;
+       console.log(str);
     }
  
     let length = str.length;
@@ -61,5 +29,7 @@ function reverseValue(value) {
 }
 
 
-reverseValue(1222221);
+
+reverseValue('madam');
+
 
