@@ -151,7 +151,6 @@ console.log(hasDuplicate(name));
 
 let isDuplicate = false;
 
-
 function  duplicate(arr){
 
     arr.forEach((item, i) => {
