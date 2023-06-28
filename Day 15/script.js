@@ -52,7 +52,7 @@ document.write(`${num.min}, ${num.max}`); */
 //<----------------------Array methods ------------------>
 
 
-let array2 = [10,1000,0];
+/* let array2 = [10,1000,0];
 array2.push(30); //adds value to the last index
 console.log(array2);
 
@@ -76,6 +76,8 @@ console.log(array2);
 
 
 console.log(array2.length);
+ */
+
 
 
 //slice selects or shows value from this index to that index
@@ -83,7 +85,7 @@ console.log(array2.length);
 //arrya.slice()
 //arrya.slice(start)
 //arrya.slice(start, end)
-const newArray = [1,2,3,4,5,6,7];
+/* const newArray = [1,2,3,4,5,6,7];
 console.log(newArray.slice()); //shows all the values
 
 console.log(newArray.slice(2)); //shows all the values from index 2
@@ -120,3 +122,50 @@ b.forEach((item) => {
 console.log(isInclude);
 console.log(b.includes(5));
 
+ */
+
+//<---------------------------------------- Check Duplicates ---------------------------->
+
+
+const name = ['John', 'Test', 'John', 'Hello']
+
+
+function hasDuplicate(arr){
+    for(let i = 0; i < arr.length; i++){
+        //console.log(arr[i]);
+        for(let j = i+1; j <arr.length; j++){
+            //console.log(arr[i], arr[j], i, j);
+            if(arr[i] ===arr[j]){
+                return true;
+            }
+        }
+
+     return false;
+
+    }
+}
+
+console.log(hasDuplicate(name));
+
+
+
+let isDuplicate = false;
+
+
+function  duplicate(arr){
+
+    arr.forEach((item, i) => {
+        for(let j = i+1; j <arr.length; j++){
+          
+            if(item ===arr[j]){
+                isDuplicate = true;
+            }
+    }
+})
+
+    
+    return isDuplicate;
+
+}
+
+console.log(duplicate(name));
