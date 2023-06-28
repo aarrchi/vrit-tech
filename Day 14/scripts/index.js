@@ -1,51 +1,69 @@
-//Global Scope and Block scope
-
-//outermost variable is in global scope
-//variables inside function's top, if and else are in block level scope. All of them 
-//refers to different variables 
 
 
-//you cannot delcare same variable twice in the same scope
+//Arrow Function 
+
+const sumOfTwoNumbers = (num1, num2) => {
+    console.log(num1 + num2);
+}
+
+sumOfTwoNumbers(3, 2);
 
 
-//let str = 2;
-//let str = 2; you cannot decalre the same variable multiple times in same scope
-//console.log(str);
 
-/* function reverseValue(value) {
-    let str = 3;
-    console.log(str);
-    if(typeof value === 'number' ){
-       let str = value.toString();
-       console.log(str);
+
+
+const reverseValue = (value) => {
+    let str;
+    if (typeof value === 'number'){
+
+     
+        str = value.toString();
     }else{
-       let str = value;
-       console.log(str);
+        str = value;
     }
- 
     let length = str.length;
     let reverseString = '';
-    for (i = length-1; i >= 0; i--){
+
+    for(let i = length - 1; i >= 0; i--){
+       /*  console.log(str[i], i); */
+
         reverseString = reverseString + str[i];
     }
 
-    console.log(reverseString);
-    (reverseString === str ? console.log(str, 'is a palindrome'): console.log(str, 'is not a palindrome'))
+   return {
+    revValue: reverseString,
+    strValue: str
+} ;
+};
+
+/* 
+console.log(reverseValue('madam')); */
+
+const data = reverseValue('madam');
+
+console.log(data);
+
+
+
+
+const findPalindrome = (reverseString, str) => {
+    if(reverseString === str){
+
+       /*  return true; */
+        console.log(str, ' is a palindrome');
+    }
+
+    else{
+
+       /*  return false; */
+        console.log(str, ' is not a palindrome');
+    }
+
+   /*  if(true){
+        console.log('it is a palindrome');
+    }else{
+        console.log('it is not a palindrome')
+    } */
 }
 
-
-
-reverseValue('madam');
- */
-
-
-
-//but if let variable is below the and the variable 
-//is called at first then it will cause4 issu;
-
-console.log(b);
-
-
-var b = 10;
-var a = 20;
-
+findPalindrome(data.revValue, data.strValue);
