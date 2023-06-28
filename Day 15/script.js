@@ -127,7 +127,7 @@ console.log(b.includes(5));
 //<---------------------------------------- Check Duplicates ---------------------------->
 
 
-const name = ['John', 'Test', 'John', 'Hello']
+/* const name = ['John', 'Test', 'John', 'Hello']
 
 
 function hasDuplicate(arr){
@@ -167,4 +167,29 @@ function  duplicate(arr){
 
 }
 
-console.log(duplicate(name));
+console.log(duplicate(name)); */
+
+
+
+//<-------------------------Array Filter ----------------------->
+
+const name = ['John', 'Test', 'John', 'Hello']
+
+name.filter((n) => {
+    console.log(n); //shows all of the value
+})
+
+
+
+const name1 = ['John', 'Test', 'John', 'Hello']
+
+const abc = name1.filter((n) => {
+   if(n === 'John'){   // if the return condition matches then the value which is matched is showed
+    //return true
+    return 'nirajan'  
+    //no matter whatever you write in return, it returns John as it matches in the condition
+
+   }
+})
+
+console.log(abc);
