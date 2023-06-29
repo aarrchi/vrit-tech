@@ -65,7 +65,7 @@
         //console.log(filteredValue); 
 
 
-        
+
 
        /*  const filteredValue = c.filter((val) => {
             return  val !== undefined;
@@ -75,9 +75,25 @@
 
         console.log(filteredValue); */
 
-
+//<-------------------------Odd and Even ------------------------------------------>
 
         const numbers = [1,25,6,7,8,10];
+
+
+        const oddNumbers = numbers.filter((number) => {
+                
+             return number % 2 !==0 ;
+        });
+
+        console.log(oddNumbers);
+
+
+        const evenNumbers = numbers.filter((number) => number % 2 == 0);
+        console.log(evenNumbers);
+
+
+
+
         const students =[
             {
                 id: 1,
