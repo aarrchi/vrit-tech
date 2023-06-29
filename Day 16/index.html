@@ -76,7 +76,7 @@
         console.log(filteredValue); */
 
 //<-------------------------Odd and Even ------------------------------------------>
-
+/* 
         const numbers = [1,25,6,7,8,10];
 
 
@@ -90,9 +90,11 @@
 
         const evenNumbers = numbers.filter((number) => number % 2 == 0);
         console.log(evenNumbers);
+ */
 
 
 
+ //<-------------------------Objcts ------------------------------------------>
 
         const students =[
             {
@@ -112,25 +114,64 @@
             {
                 id: 3,
                 name: 'Ram',
-                age : 18,
+                age : 17,
                 marks:55,
             },
 
             {
                 id: 5,
                 name: 'Sita',
-                age : 30,
+                age : 16,
                 marks:90,
+                address:{
+                    streetNo: 330,
+                    postalCode:33600,
+                    city:{
+                        Ktm, Pokhara
+                    }
+                }
             },
         ];
 
 
-        const objt = {
+        const response = {
             status: true,
             message:'Data fetcehd successfully',
             data:students,
         };
 
+
+        /* if(val.age >=18){
+                return true;
+            } */
+        /* let filteredStudents;
+        if (response.status == true){
+           filteredStudents = response.data.filter((val) => {
+            console.log(val);
+            
+            return val.age >= 18;
+        })
+        }else{
+            console.log('error');
+        }
+
+        console.log(filteredStudents); */
+
+
+
+
+let filteredMarks;
+       if (response.status === true){
+         filteredMarks = response.data.filter((student) => {
+         
+         if(student.marks >=40){
+             return true;            }
+     })
+       }else{
+        console.log('error');
+       }
+
+        console.log(filteredMarks);
 
 
 
