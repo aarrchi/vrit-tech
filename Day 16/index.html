@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        b = [];
+        const a = ["Ram", 2, 'Shyam' ];
+
+        /* for (let i = 0; i < a.length; i++){
+            //console.log(a[i], i);
+
+            if(typeof a[i] === 'string'){
+                b.push(a[i]);
+            }
+        }
+
+        console.log(b); */
+
+        /* for(let i of a ){
+           //console.log(i);
+           if(typeof i === 'string'){
+                b.push(i);
+            }
+        }
+        console.log(b); */
+
+
+       /*  a.forEach(function(item){
+           if(typeof item === 'string'){
+             b.push(item);
+           }
+        })
+
+        console.log(b); */
+
+
+        const filteredValue = a.map(function(value){
+            //console.log(value);
+            if(typeof value === 'string'){
+               return value;
+           }
+        }).filter((val) => {
+            return  val !== undefined;
+
+        })/* .map((item) => {
+            return{
+                isActive: true,
+                name:item,
+
+            };
+        }) */ .forEach((data) => {
+            b.push({
+                name: data,
+                isActive:true,
+            });
+
+        })
+
+
+        console.log(filteredValue);
+
+       /*  const filteredValue = c.filter((val) => {
+            return  val !== undefined;
+
+        })
+
+
+        console.log(filteredValue); */
+
+
+
+        const numbers = [1,25,6,7,8,10];
+        const students =[
+            {
+                id: 1,
+                name: 'Prasant',
+                age : 26,
+                marks:42,
+            },
+
+            {
+                id: 2,
+                name: 'Anil',
+                age : 22,
+                marks:37,
+            },
+
+            {
+                id: 3,
+                name: 'Ram',
+                age : 18,
+                marks:55,
+            },
+
+            {
+                id: 5,
+                name: 'Sita',
+                age : 30,
+                marks:90,
+            },
+        ];
+
+
+        const objt = {
+            status: true,
+            message:'Data fetcehd successfully',
+            data:students,
+        };
+
+
+
+
+    </script>
+    
+</body>
+</html>
