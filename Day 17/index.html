@@ -32,12 +32,208 @@
         //promises
         //async await */
 
-        console.log('first');
-        setTimeout(() => {
+       /*  console.log('first');
+        setTimeout(() => { //settimeout tells program to run after certain time
             console.log('second');
-        }, 5000);
+        }, 5000); //5000 ms -> 5sec
 
         console.log('third');
+
+
+        setTimeout(() => {
+            console.log('second');
+        }, 0);  */
+
+        //even thoughh the time is set to 0 it is stored at queue 
+        //which means it executes at last
+
+//<-----------------------------------------CallBack------------------------------------------------->
+   //To pass data coming from API - not mostly used these days. only in legacy projects
+        //Callback -> pass function inside a function
+
+        /* function sum(a, b){
+            console.log(a+b);
+        };
+
+        function sub(a, b){
+            console.log(a-b);
+        };
+
+        sum(1, 2);
+        sub(3, 2);
+         */
+
+//--------------SYNTAX---------------
+
+      /*   function sum(a, b, cb){
+            console.log(a+b);
+            cb(10, 10, mul);
+        };
+
+        function mul(a, b){
+          return a * b;
+        };
+
+        function sub(a, b, cb){
+            console.log(a-b);
+          const mul=  cb(7,9);
+          console.log('mull', mul);
+
+        };
+
+        sum(1, 2, sub); */
+
+     /*    const students = ['Ram', 'Syam', 'Hari'];
+
+        function addStudents(student, cb){
+            //students.push(student);
+            setTimeout(() => {
+                console.log('third');
+                students.push(student);
+                cb();
+            }, 50);
+       
+        };
+        
+
+        function getStudents(){
+            console.log('students', students);
+            document.write(students);
+        }
+
+
+
+        console.log('first');
+        const stud = prompt('Enter a student name');
+        console.log('second');
+        addStudents(stud, getStudents);
+        console.log('fourth');
+         */
+
+
+    //<---------------------Promises------------------------->
+    
+    //two states 1.pending 2. fulfilled 3.Rejected
+   /*  1.Pending -> It is taking time while calling API
+    2. Fulfilled -> Data added successfully
+    3. Rejected -> Data call failure
+
+ */  
+     /*  from code 122 to 146 is just a replica of the promise
+     
+     We dont have to writ that it is just for understanding the background of the promise
+        const students = ['Ram', 'Syam', 'Hari'];
+
+        function addStudents(student){
+
+            let error = false;
+
+            if(typeof student === 'number'){
+                error = true;
+            }
+
+            return new Promise((fulfilled, reject) => {
+                if(error){
+                   reject();
+                }else{
+                    students.push(student);
+                    fulfilled({
+                        status:true,
+                        message:'students added',
+                        data: students,
+                    });
+                }
+            })
+
+        }; */
+
+
+        
+
+   
+       /*  console.log(addStudents('sita'));
+        //It is the actual code of the promise
+        addStudents('sita').then((resp) => {
+           
+            console.log(resp);
+        }).catch(() => {
+            console.log('error');
+        });
+
+        console.log('I am fast'); */
+   
+
+    //<------------------------------API----------------------------->
+    /*
+        Application Programming Interface
+
+        web application has generally three parts. frontend backend and database
+
+
+        frontend is also known as client side//UI UX. It might be static or dynamic
+        Frontend has to have communication with backend
+
+
+        Client queries and server responses
+        If we have to communicate between client and server we use API that is done thro9ugh HTTP methods
+    
+    */
+
+
+    //HTTP Methods aka CRUD 
+    /*
+        GET: data retrieve
+        POST: data submit
+        PUT/UPDATE/PATCH: data change 
+        DELETE: Remove the data
+    
+    */
+    
+    
+
+
+    /* 
+    Fetch method is used to call API and its resources asynchronously
+    It is a promise-based. means uses .then.catch 
+    Its alternative is async await
+    
+    It is inbuilt javascript 
+    */
+
+
+    /* 
+    
+     fetch('https://dummyjson.com/products').then((resp) => {
+        console.log(resp.json());
+    });
+
+   
+   
+ */
+
+  const getProducts = async () => {
+    const resp = await fetch('https://dummyjson.com/products');
+    const product = await resp.json();
+    console.log(product);
+
+  };
+
+  getProducts();
+
+  
+ /* fetch('https://dummyjson.com/products').then((resp) => {
+        return resp.json();
+    }).then((resp) => {
+        console.log(resp);
+    });
+ */
+
+    console.log('APi called here');
+
+
+    
+
+
         
     </script>
 </body>
