@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous/Asynchronous JS</title>
+</head>
+<body>
+    <script>
+        //<-------------------------------Synchronous -------------------------->>
+       /*  code executes top to bottom 
+        line by line
+        blocking programming
+        runs first code then only later ones
+
+
+        console.log('first');
+        for(let i = 0; i <=1000000000000000; i++){};
+        console.log('third');
+
+
+        here third line of code is blocked to be executed because of the time taken by second loop to execute
+ */         
+
+
+ //<--------------------------//Asynchronous Programming------------------>
+        
+      /*  doesn't block next line of code
+      allows code to execute parallelly  
+      -> to call API; three ways
+        //callback
+        //promises
+        //async await */
+
+        console.log('first');
+        setTimeout(() => {
+            console.log('second');
+        }, 5000);
+
+        console.log('third');
+        
+    </script>
+</body>
+</html>
