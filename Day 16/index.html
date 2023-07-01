@@ -8,8 +8,8 @@
 <body>
 
     <script>
-        b = [];
-        const a = ["Ram", 2, 'Shyam' ];
+       /*  b = [];
+        const a = ["Ram", 2, 'Shyam' ]; */
 
         /* for (let i = 0; i < a.length; i++){
             //console.log(a[i], i);
@@ -102,6 +102,16 @@
                 name: 'Prasant',
                 age : 26,
                 marks:42,
+                address:{
+                    streetNo: 330,
+                    postalCode: 33600,
+                    city:[
+                        {
+                            state: 'Bagmati',
+                            name: 'KTM',
+                        },
+                    ],
+                },
             },
 
             {
@@ -109,6 +119,16 @@
                 name: 'Anil',
                 age : 22,
                 marks:37,
+                address:{
+                    streetNo: 330,
+                    postalCode: 33600,
+                    city:[
+                        {
+                            state: 'Bagmati',
+                            name: 'KTM',
+                        },
+                    ],
+                },
             },
 
             {
@@ -116,6 +136,16 @@
                 name: 'Ram',
                 age : 17,
                 marks:55,
+                address:{
+                    streetNo: 330,
+                    postalCode: 33600,
+                    city:[
+                        {
+                            state: 'Gandaki',
+                            name: 'Lamjung',
+                        },
+                    ],
+                },
             },
 
             {
@@ -125,11 +155,19 @@
                 marks:90,
                 address:{
                     streetNo: 330,
-                    postalCode:33600,
-                    city:{
-                        Ktm, Pokhara
-                    }
-                }
+                    postalCode: 33600,
+                    city:[
+                        {
+                            state: 'Gandaki',
+                            name: 'Pokhara',
+                        },
+
+                        {
+                            state: 'Bagmati',
+                            name: 'KTM',
+                        },
+                    ],
+                },
             },
         ];
 
@@ -140,39 +178,106 @@
             data:students,
         };
 
-
-        /* if(val.age >=18){
-                return true;
-            } */
-        /* let filteredStudents;
-        if (response.status == true){
-           filteredStudents = response.data.filter((val) => {
-            console.log(val);
+      /*   let filteredStudents;
+        if (response.status === true){
             
-            return val.age >= 18;
-        })
+        filteredStudents = response.data.filter((val) => {
+        if(val.age >= 18){
+            return true;
+              OR
+        return val.age > 18;
+        });
+        } else{
+            console.log('error');
+        }
+        console.log(filteredStudents);
+ */     
+
+      /*   let filteredStudents;
+        if (response.status === true){
+            filteredStudents = response.data.filter((value) => {
+            return value.marks > 40;
+            });
         }else{
             console.log('error');
         }
 
-        console.log(filteredStudents); */
+    console.log(filteredStudents); */
+
+    
+ 
+ /*    const filteredStudents = response.data.filter((val) => {
+
+      const filteredCity = val.address.city.filter((c) => {
+            if(c.state === 'Gandaki'){
+                return true;
+            }
+            //return c.state === 'Gandaki'
+        }); 
+
+        //console.log( filteredCity);
+        if(filteredCity.length > 0){
+            return true;
+        }
+
+        //return filterdCity.length >0
+    
+    });
+
+    console.log(filteredStudents); */
 
 
 
+/*     
+    isStateFound = false;
+    let cityy;
+    const filteredStudents = response.data.filter((item) => {
+      cityy = item.address.city.forEach((city) => {
+           if(city.state === 'Gandaki'){
+               isStateFound = true;
+               
+           };
+        
+       });
 
-let filteredMarks;
-       if (response.status === true){
-         filteredMarks = response.data.filter((student) => {
-         
-         if(student.marks >=40){
-             return true;            }
-     })
-       }else{
-        console.log('error');
+       if(isStateFound === true){
+            return true;
        }
+    });
 
-        console.log(filteredMarks);
 
+    console.log(filteredStudents);
+ */
+
+
+    function filteredStudentsWithCity(response, city) {
+        const filteredStudents = response.data.filter((d) => {
+            const filteredCity  = d.address.city.filter((c) => {
+                return c.state === city;
+            });
+
+            return filteredCity.length > 0;
+        });
+
+    return filteredStudents;
+
+    }
+
+    const cityName = prompt('Enter a state name');
+/* 
+    console.log(filteredStudentsWithCity(response, cityName)
+); */
+    const filledData = filteredStudentsWithCity(response, cityName);
+    if(filledData.length === 0){
+        console.log('No student with such state');
+    }else{
+        console.log(filledData);
+    }
+
+
+
+
+    
 
 
     </script>
