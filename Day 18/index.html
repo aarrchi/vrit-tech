@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <form action="">
+      <input type="text" placeholder="Enter product name">
+      <input type="text" placeholder="Enter description">
+      <input type="text" placeholder="Enter price">
+      <!-- <button onClick="handleSubmit(event)">Add product</button> -->
+      <button onClick="deleteProduct(event)">Delete product</button>
+    </form>
+    <script>
+      const SERVER_URL = "https://dummyjson.com";
+
+    //<-----------------------------GET METHOD-------------------->
+
+
+      /* const getUsers = async () => {
+        const resp = await fetch(`${SERVER_URL}/users`, {
+          method: "GET",
+        });
+        const users = await resp.json();
+        console.log(users);
+        document.write(users.users[0].username);
+      };
+
+      const getProducts = async () => {
+        const resp = await fetch(`${SERVER_URL}/products`, {
+          method: "GET",
+        });
+        const products = await resp.json();
+        console.log(products);
+      }; */
+      /* 
+        getUsers();
+        console.log('hi');
+        getProducts(); */
+
+      
+      //<-----------------------------JSON = Javascript Object Notation-------------------->
+
+       /*   This is normal object
+       
+            const student = {
+            firstaname: 'pasang',
+            lastname:'tamang',
+            age: 25,
+        };
+
+        console.log(student); */
+
+
+        
+       /*  This is JSON format  
+            To communicate between frontend and backend data is used in JSON format
+            In key value pair, the key should be in string format
+            value can be in any format,  system doess not care
+            but value number should be kept in number 
+*/
+         /*    const student = {
+           "firstaname": 'pasang',
+            "lastname":'tamang',
+         " age": 25,
+        } */
+        //console.log(student); appears in wrong format
+        //console.log(JSON.stringify(student)); this is the write output, stringify sets key as string 
+ 
+        //***** We have to do JSON.stringify in fetch but not in axios. axios does it automatically
+ 
+        
+    //<-----------------------------POST METHOD-------------------->
+    
+/* 
+
+    const addNewProduct = async (product) => {
+      const body = JSON.stringify(product);
+        console.log(body);
+        try {
+
+          const resp = await fetch(`${SERVER_URL}/products/add`, {
+          method: "POST",
+          //body: JSON.stringify(product); ORR
+          body: body,
+        });
+
+        const prod = await resp.json();
+        console.log('product added successfully',prod);
+          
+        } catch (error) {
+            console.log('error');
+        }
+
+       
+      }; */
+
+      //addNewProduct();
+
+     /*  const handleSubmit= (e) => {
+        console.log(e);
+        e.preventDefault();
+        
+        const product = {
+            title: 'Iphone',
+            descriptioin: 'Iphone 10 pro max',
+            price: 123,
+        } 
+       
+
+        addNewProduct(product);
+
+      };
+ */
+/* 
+      const updateProduct = async (product, id) => {
+        try {
+
+          const body = JSON.stringify(product);
+          const response = await fetch(`${SERVER_URL}/products/${id}`, {
+            method: 'PUT',
+            body: body,
+
+          });
+
+          const updateProduct = await response.json();
+          console.log('product update', updateProduct);
+
+        } catch (error) {
+          console.log('error');
+        }
+      }
+
+      updateProduct({title: 'abc'}, 2);
+
+ */
+
+   //<--------------------------------------Delete Method--------------------------------------------->
+      const deleteProduct = async (event) => {
+
+        try {
+           
+            event.preventDefault();
+            let id = 2;
+
+            const resp = await fetch(`${SERVER_URL}/products/${id}`, {
+              method: 'DELETE'
+              
+            })
+
+            const deleteProduct = await resp.json();
+            console.log('product deleted successfully', deleteProduct);
+
+        } catch (error) {
+            console.log('error');
+        }
+      };
+
+      
+
+        
+      /*<----------------------DOM------------------------->
+        Document object model
+        can manipulate whole html code content like title header footer body div ptag h1 tagetc.
+
+        for instance  */
+        document.title = 'DOM';
+        console.log(document);
+
+        //window
+        /* More powerful than DOM is window
+        DOM has control of only HTMl section 
+        however window can manipulate even outside of it 
+        like url, application's cookies, location, shifting to the another url 
+         */
+
+        console.log(window.location);
+        console.log(window.alert('test'));
+        console.log(window);
+   
+
+    </script>
+  </body>
+</html>
