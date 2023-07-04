@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  /*       array = ['Hello', 'This', 'is', 'a', 'test', 'string'];
+        newArray = [];
+        let sentence = 'is a short string';
+
+
+        filteredString = array.filter((string) => {
+            if (string.length < 5){
+                return newArray.push(string);
+            }
+        }).forEach((filter) => {
+
+            //console.log(filter);
+
+            completeSentence =  filter + sentence ;
+         
+            console.log( `${filter} ${sentence}`);
+            
+        }); */
+
+/* 
+    obj =  {
+  "movies": [
+    {
+      "title": "Movie A",
+      "year": 2022,
+      "genres": [
+        {
+          "name": "Genre X",
+          "classification": {
+            "main": "Action",
+            "sub": ["Thriller", "Adventure"]
+          }
+        },
+        {
+          "name": "Genre Y",
+          "classification": {
+            "main": "Drama",
+            "sub": ["Romance"]
+          }
+        }
+      ],
+      "actors": [
+        {
+          "name": "Actor 1",
+          "role": "Protagonist"
+        },
+        {
+          "name": "Actor 2",
+          "role": "Antagonist"
+        }
+      ]
+    },
+    {
+      "title": "Movie B",
+      "year": 2019,
+      "genres": [
+        {
+          "name": "Genre Z",
+          "classification": {
+            "main": "Science Fiction",
+            "sub": ["Thriller"]
+          }
+        },
+        {
+          "name": "Genre W",
+          "classification": {
+            "main": "Mystery",
+            "sub": ["Suspense"]
+          }
+        }
+      ],
+      "actors": [
+        {
+          "name": "Actor 3",
+          "role": "Main Character"
+        },
+        {
+          "name": "Actor 4",
+          "role": "Supporting Character"
+        }
+      ]
+    }
+  ]
+};
+
+
+const movieGenre = prompt('Enter movie genre');
+
+let sub;
+
+const movie = (movies) => {
+    const filteredMovies = obj.movies.filter((movieData) => {
+    movieData.genres.forEach((genre)=> {
+     genre.classification.sub.forEach((sub) => {
+        if (sub === movies){
+        console.log(movieData);
+       } 
+     })
+  });
+})
+};
+
+
+movie(movieGenre);
+
+
+
+      */
+
+
+      const numbers = [1,2,3,2,1,2,3,3,3];
+      
+      let i;
+      let count;
+      
+       for(i = 0; i < numbers.length; i++){
+        count = 1;
+           for(let j = i + 1; j < numbers.length; j++){
+
+                if(numbers[i] === numbers[j]){
+                    count += 1;
+                   
+                    
+                   
+
+
+                }   
+              
+           }
+           console.log(count, numbers[i]);
+           
+           
+
+        }
+       
+       
+
+       
+    </script>
+</body>
+</html>
