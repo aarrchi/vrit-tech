@@ -129,6 +129,11 @@ const test = [1,5, 6, 8];
 const [e, f, g, h] = [1, 5, 6, 8];
 console.log(e, f, g,h);
 
+const[i, ikl, ...testing] = [1, 4, 5, 7, 9];
+console.log(i);
+console.log(ikl);
+console.log(testing);
+
 
 //<-----------Object looping method---------------->
 /// for in ->>> object
@@ -154,3 +159,111 @@ for (let num of number){
 
 
 
+//<------------Array has reverse method but not an string-------------->
+const string = 'madam test';
+//console.log(string.reverse());
+
+//split converts string to array
+console.log(string.split('').reverse().join(''));
+//console.log(string.split('m'));
+
+const array = [1, 2,3,4 ,5];
+console.log(array.reverse());
+
+const {movies} = {
+    "movies": [
+      {
+        "title": "Movie A",
+        "year": 2022,
+        "genres": [
+          {
+            "name": "Genre X",
+            "classification": {
+              "main": "Action",
+              "sub": ["Thriller", "Adventure"]
+            }
+          },
+          {
+            "name": "Genre Y",
+            "classification": {
+              "main": "Drama",
+              "sub": ["Romance"]
+            }
+          }
+        ],
+        "actors": [
+          {
+            "name": "Actor 1",
+            "role": "Protagonist"
+          },
+          {
+            "name": "Actor 2",
+            "role": "Antagonist"
+          }
+        ]
+      },
+      {
+        "title": "Movie B",
+        "year": 2019,
+        "genres": [
+          {
+            "name": "Genre Z",
+            "classification": {
+              "main": "Science Fiction",
+              "sub": ["Thriller"]
+            }
+          },
+          {
+            "name": "Genre W",
+            "classification": {
+              "main": "Mystery",
+              "sub": ["Suspense"]
+            }
+          }
+        ],
+        "actors": [
+          {
+            "name": "Actor 3",
+            "role": "Main Character"
+          },
+          {
+            "name": "Actor 4",
+            "role": "Supporting Character"
+          }
+        ]
+      }
+    ]
+  }
+
+
+ function checkGenre(g) {
+
+    /* movies.forEach((movie) => {
+        //console.log(movie.genres);
+        movie.genres.forEach((genre) => {
+            //console.log(genre);
+            const isGenreInclude = genre.classification.sub.includes(g);
+            console.log(isGenreInclude);
+        });
+      }); */
+
+                                    //map
+      const filteredMovie = movies.filter((movie) => {
+       
+        const data = movie.genres.filter((genre) => {
+            
+            return genre.classification.sub.includes(g);
+            
+        });
+
+        //console.log(data);
+        return data.length > 0 && movie;
+        //return data.length > 0 ? movie: 'No movie with sych genre';
+      });
+
+      console.log(filteredMovie);
+
+
+ };
+
+ checkGenre('Romance');
