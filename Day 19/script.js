@@ -97,5 +97,60 @@ container.style.width='200px';
 container.style.height='300px';
 
 
+//Destructuring
+
+//In object destructuring put the variable directly while initializaing 
+
+
+//normal way
+let num = {
+    a:1,
+    b:2
+}
+console.log(num);
+
+//Object destructuring way
+//put the key directly in the initialization
+let {a, b, c = 4} = {
+    a:1,
+    b:2,
+ 
+}
+console.log(a, b, c);
+
+
+
+//Array destructuring
+
+//normal way
+const test = [1,5, 6, 8];
+
+//destructuring
+const [e, f, g, h] = [1, 5, 6, 8];
+console.log(e, f, g,h);
+
+
+//<-----------Object looping method---------------->
+/// for in ->>> object
+let obj = {
+    firstname: 'pasang',
+    lastname: 'tamang'
+}
+
+for (let name in obj){
+    console.log(name, obj[name]);
+}
+
+
+
+//<-----------Array looping method---------------->
+/// for of ->>> Array
+const number = [1, 2, 3,4, 5,6,7];
+
+for (let num of number){
+    console.log('num', num);
+}
+
+
 
 
