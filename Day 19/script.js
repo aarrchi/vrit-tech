@@ -67,4 +67,35 @@ console.log(firstName.split(''));
 
 */
 
+//<-------------------DOM-------------->
+
+/* //Get Element by Id
+console.log(document.getElementById('cont'));
+
+
+//Get Element by ClassName
+console.log(document.getElementsByClassName('container'));
+
+console.log(document.getElementsByTagName('div'));
+console.log(document.getElementsByTagName('p'))
+
+
+//querySelector -> can select id, classname, tag etc but selects only the first one or the top most
+console.log(document.querySelector('p'))
+console.log(document.querySelector('.container'));
+console.log(document.querySelector('#cont'));
+
+
+//querySelectorAll returns all the selected element not only the first one.
+console.log(document.querySelectorAll('p'));
+ */
+
+
+const container = document.querySelector('#container');
+container.style.backgroundColor= 'red';
+container.style.width='200px';
+container.style.height='300px';
+
+
+
 
