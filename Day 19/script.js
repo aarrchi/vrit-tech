@@ -32,6 +32,41 @@ const findMaxCount = (arr) => {
     console.log(maxCount)
     console.log(frequency);
     console.log(frequentElement + 'is the most frequent element');
+    
+    
+    console.log(Object.keys(frequency)); //see objects.keys
+    console.log(Object.values(frequency));
+
+    Object.values(frequency).forEach((val, index) => {
+        console.log(val, index);
+        if (val > maxCount ){
+            maxCount = val;
+           
+        }
+
+        
+    });
+
+
+
 };
 
 findMaxCount(numbers);
+
+/* 
+
+//<------------------------STRING METHODS---------------------------->
+
+let firstName = 'firstName';
+firstName.toUpperCase();
+console.log(firstName); 
+
+
+let firstName = 'firstName';
+console.log(firstName.split(''));
+
+*/
+
+
+
+
