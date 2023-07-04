@@ -5,7 +5,7 @@ f={
     2:2,
     3:1, 
 } */
-const findMaxCount = (arr) => {
+/* const findMaxCount = (arr) => {
     let frequency = {};
     let maxCount = 0;
     let frequentElement;
@@ -52,7 +52,7 @@ const findMaxCount = (arr) => {
 };
 
 findMaxCount(numbers);
-
+ */
 /* 
 
 //<------------------------STRING METHODS---------------------------->
@@ -66,7 +66,5 @@ let firstName = 'firstName';
 console.log(firstName.split(''));
 
 */
-
-
 
 
